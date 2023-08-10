@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+
+  public class Calculadora {
+
+      public static void main(String[] args) {
+
+          Scanner sc = new Scanner(System.in);
+
+          System.out.println("Escriba el primer numero: ");
+          float num1 = sc.nextFloat();
+          
+          System.out.println("Escriba la operacion que quiere hacer");
+          System.out.println("1. suma");
+          System.out.println("2. resta");
+          System.out.println("3. multiplicacion");
+          System.out.println("4. division");
+          System.out.println("5. seno");
+          System.out.println("6. coseno");
+          System.out.println("7. tangente");
+          System.out.println("8. potencia");
+    
+          char operacion = sc.next().charAt(0);
+
+          
+          System.out.println("Escriba el segundo numero: ");
+          float num2 = sc.nextFloat();
+          float resultado;
+
+          switch(operacion) {
+            case '1':
+                  resultado = num1 + num2;
+                  break;
+            case '2':
+                  resultado = num1 - num2;
+                  break;      
+            case '3':
+                  resultado = num1 * num2;
+                  break;      
+            case '4':
+                  resultado = num1 / num2;
+                  if(num2==0){
+                      System.out.println("***ERROR***");
+                  }
+                  break;    
+            case '8':
+                resultado = Math.pow(num1,num2);
+                break;
+
+                      
+                  
+              default:
+                  System.out.println("**Operacion invalida**");
+                  return;
+          }
+          System.out.println("El resultado es: ");
+          System.out.println(num1 + " " + operacion + " " + num2 + " = " + resultado);
+      }
+  }
