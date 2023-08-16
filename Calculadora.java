@@ -1,15 +1,16 @@
+
+
 import java.util.Scanner;
 
 
-  public class Calculadora {
+public class Calculadora {
 
-      public static void main(String[] args) {
+    
+   
+         public static void main(String[] args) {
 
           Scanner sc = new Scanner(System.in);
 
-          System.out.println("Escriba el primer numero: ");
-          float num1 = sc.nextFloat();
-          
           System.out.println("Escriba la operacion que quiere hacer");
           System.out.println("1. suma");
           System.out.println("2. resta");
@@ -22,9 +23,11 @@ import java.util.Scanner;
     
           char operacion = sc.next().charAt(0);
 
+          System.out.println("Escriba el primer numero: ");
+          float num1 = sc.nextFloat();
           
           System.out.println("Escriba el segundo numero: ");
-          float num2 = sc.nextFloat();
+          int num2 = sc.nextInt();
           float resultado;
 
           switch(operacion) {
@@ -42,13 +45,25 @@ import java.util.Scanner;
                   if(num2==0){
                       System.out.println("***ERROR***");
                   }
-                  break;    
+                  break;
+            case '5':
+                  int resultado2 = (int) Math.toRadians(num1);
+                  resultado = (float) Math.sin(resultado2);  
+                  break; 
+
+              case '6':      
+                  int resultado3 = (int) Math.toRadians(num1);
+                  resultado = (float) Math.cos(resultado3);
+                  break; 
+
+              case '7':
+                  int resultado4 = (int) Math.toRadians(num1);
+                  resultado = (float) Math.tan(resultado4);
+                  break;
             case '8':
-                resultado = Math.pow(num1,num2);
+                resultado = (float)Math.pow(num1,num2);
                 break;
 
-                      
-                  
               default:
                   System.out.println("**Operacion invalida**");
                   return;
@@ -57,3 +72,7 @@ import java.util.Scanner;
           System.out.println(num1 + " " + operacion + " " + num2 + " = " + resultado);
       }
   }
+
+
+    
+    
